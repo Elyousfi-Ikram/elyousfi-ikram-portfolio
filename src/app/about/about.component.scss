@@ -1,11 +1,11 @@
-$khaki-primary: #6b7c32;
-$khaki-secondary: #556b2f;
-$khaki-light: #4a5d23;
-$khaki-text: #5a6b2f;
-$khaki-border: rgba(107, 124, 50, 0.2);
+$khaki-primary: #4f8cf7;
+$khaki-secondary: #9b5cf0;
+$khaki-light: #c084fc;
+$khaki-text: #93a0bb;
+$khaki-border: rgba(155, 92, 240, 0.55);
 
-$white: #ffffff;
-$background-light: #f8f9fa;
+$white: #eef2fb;
+$background-light: #0a1024;
 
 $font-size-sm: 0.9rem;
 $font-size-base: 1rem;
@@ -16,8 +16,8 @@ $font-size-xxl: clamp(2rem, 4vw, 2.5rem);
 $line-height-relaxed: 1.8;
 
 $transition-base: 0.3s ease;
-$shadow-light: 0 4px 15px rgba(107, 124, 50, 0.25);
-$shadow-hover: 0 8px 24px rgba(107, 124, 50, 0.35);
+$shadow-light: 0 4px 15px rgba(79, 140, 247, 0.25);
+$shadow-hover: 0 8px 24px rgba(79, 140, 247, 0.35);
 
 @mixin gradient-bg($color1, $color2, $direction: 135deg) {
   background: linear-gradient($direction, $color1, $color2);
@@ -28,12 +28,12 @@ $shadow-hover: 0 8px 24px rgba(107, 124, 50, 0.35);
 }
 
 #about-me {
-  @include gradient-bg($white, $background-light);
+  // @include gradient-bg(#070b16, $background-light);
   min-height: 60vh;
 
   .about-container {
     width: 100%;
-    backdrop-filter: saturate(150%) blur(0.6px);
+    // backdrop-filter: saturate(150%) blur(0.6px);
   }
 
   .about-header {

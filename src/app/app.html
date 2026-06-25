@@ -1,7 +1,5 @@
-<app-header></app-header>
 <app-banner></app-banner>
-<app-about></app-about>
-<app-projets></app-projets>
-<app-competences></app-competences>
-<app-contact></app-contact>
-<app-footer></app-footer>
+@if (showHeader()) {
+<app-header></app-header>
+}
+<router-outlet></router-outlet>

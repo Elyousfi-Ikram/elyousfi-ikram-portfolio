@@ -1,27 +1,25 @@
 import { Component, signal } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { BannerComponent } from './banner/banner.component';
-import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
-import { ProjetsComponent } from './projets/projets.component';
-import { CompetencesComponent } from './competences/competences.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    BannerComponent,
-    AboutComponent,
-    HeaderComponent,
-    ProjetsComponent,
-    CompetencesComponent,
-    ContactComponent,
-    FooterComponent,
-  ],
+  imports: [RouterOutlet, BannerComponent, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('portfolio-angular');
+  readonly showHeader = signal(true);
+
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
+      .subscribe(e => {
+        this.showHeader.set(!e.urlAfterRedirects.startsWith('/tarifs'));
+      });
+  }
 }

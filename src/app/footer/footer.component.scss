@@ -1,9 +1,9 @@
-$primary-khaki: #8B8F47;
-$khaki-primary: #6b7c32;
-$light-khaki: #C4C78A;
-$dark-khaki: #6B6F35;
-$white: #FFFFFF;
-$glass-bg: rgba(26, 29, 35, 0.9);
+$primary-khaki: #4f8cf7;
+$khaki-primary: #2ee0e8;
+$light-khaki: #c084fc;
+$dark-khaki: #0c1226;
+$white: #eef2fb;
+$glass-bg: rgba(7, 11, 22, 0.95);
 
 @mixin glass-effect {
     background: $glass-bg;

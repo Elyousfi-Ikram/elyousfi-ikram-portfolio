@@ -1,10 +1,33 @@
 @use "bootstrap/scss/bootstrap";
 
+/* ===== Palette flyer : variables globales ===== */
+:root {
+    --bg:          #070b16;
+    --bg-soft:     #0a1024;
+    --card:        #0c1226;
+    --card-border: rgba(155, 92, 240, 0.55);
+    --blue:        #4f8cf7;
+    --purple:      #9b5cf0;
+    --violet:      #c084fc;
+    --cyan:        #2ee0e8;
+    --text:        #eef2fb;
+    --muted:       #93a0bb;
+    --muted-soft:  #6c7894;
+    --grad:        linear-gradient(100deg, #4f8cf7 0%, #9b5cf0 55%, #c084fc 100%);
+    --radius:      16px;
+}
+
+/* Fond global sombre */
+body {
+    background: var(--bg) !important;
+    color: var(--text);
+}
+
 /* Shared baseline: title underline */
 .title-underline {
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #6b7c32, #556b2f);
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
     transition: width 0.3s ease;
     display: block;
 }
@@ -36,7 +59,7 @@
 
 /* Global: h1 uniform styling across the app */
 h1 {
-    color: #4a5d23;
+    color: #fff;
     font-size: clamp(2rem, 4vw, 2.5rem);
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -79,7 +102,7 @@ h1 {
     }
 }
 
-/* Utilité: fond section clair partagé */
+/* Utilité: fond section partagé */
 .section-bg-light {
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    background: linear-gradient(135deg, var(--bg-soft), var(--card));
 }

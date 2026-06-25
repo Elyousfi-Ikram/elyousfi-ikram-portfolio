@@ -1,16 +1,16 @@
 // Variables — Couleurs
-$khaki-primary: #6b7c32;
-$khaki-secondary: #556b2f;
-$khaki-light: #4a5d23;
-$khaki-text: #5a6b2f;
-$khaki-shadow: rgba(107, 124, 50, 0.1);
-$khaki-border: rgba(107, 124, 50, 0.2);
-$khaki-hover: rgba(107, 124, 50, 0.15);
+$khaki-primary: #4f8cf7;
+$khaki-secondary: #9b5cf0;
+$khaki-light: #c084fc;
+$khaki-text: #93a0bb;
+$khaki-shadow: rgba(79, 140, 247, 0.1);
+$khaki-border: rgba(155, 92, 240, 0.55);
+$khaki-hover: rgba(79, 140, 247, 0.15);
 
-$white: #ffffff;
-$background-light: #f8f9fa;
-$text-dark: #2c3e50;
-$container-bg: rgba(255, 255, 255, 0.9);
+$white: #eef2fb;
+$background-light: #0a1024;
+$text-dark: #eef2fb;
+$container-bg: rgba(12, 18, 38, 0.9);
 
 // Variables — Espacements
 $spacing-lg: 2rem;
@@ -27,10 +27,10 @@ $border-radius-sm: 2px;
 
 // Variables — Transitions et ombres
 $transition-base: 0.3s ease;
-$shadow-light: 0 4px 15px rgba(107, 124, 50, 0.3);
-$shadow-hover: 0 6px 20px rgba(107, 124, 50, 0.4);
-$shadow-container: 0 8px 32px rgba(107, 124, 50, 0.1);
-$shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
+$shadow-light: 0 4px 15px rgba(79, 140, 247, 0.3);
+$shadow-hover: 0 6px 20px rgba(79, 140, 247, 0.4);
+$shadow-container: 0 4px 20px rgba(79, 140, 247, 0.5);
+$shadow-card: 0 4px 20px rgba(79, 140, 247, 0.15);
 
 // Mixins
 @mixin gradient-bg($color1, $color2, $direction: 135deg) {
@@ -47,7 +47,7 @@ $shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
 }
 
 @mixin container-style {
-    box-shadow: $shadow-container;
+    // box-shadow: $shadow-container;
     border: 1px solid $khaki-shadow;
 }
 
@@ -104,7 +104,7 @@ $shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
     .projects-layout {
         .project-detail-panel {
             border: 1px solid $khaki-border;
-            box-shadow: $shadow-container;
+            // box-shadow: $shadow-container;
 
             .detail-title {
                 color: $khaki-light;
@@ -214,7 +214,7 @@ $shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
 
         .projects-grid {
             animation: fadeIn 0.8s ease forwards;
-            height: 1410px;
+            height: 1010px;
         }
 
         .project-item {
@@ -234,7 +234,7 @@ $shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
 
                         .project-overlay {
                             opacity: 1;
-                            background: linear-gradient(135deg, rgba(107, 124, 50, 0.8), rgba(85, 107, 47, 0.9));
+                            background: linear-gradient(135deg, rgba(79, 140, 247, 0.8), rgba(155, 92, 240, 0.9));
                             border-radius: 30px;
                         }
 

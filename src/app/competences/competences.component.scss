@@ -1,12 +1,12 @@
-$khaki-primary: #6b7c32;
-$khaki-secondary: #556b2f;
-$khaki-light: #4a5d23;
-$khaki-text: #5a6b2f;
-$khaki-border: rgba(107, 124, 50, 0.2);
+$khaki-primary: #4f8cf7;
+$khaki-secondary: #9b5cf0;
+$khaki-light: #c084fc;
+$khaki-text: #93a0bb;
+$khaki-border: rgba(155, 92, 240, 0.55);
 
-$white: #ffffff;
-$background-light: #f8f9fa;
-$container-bg: rgba(255, 255, 255, 0.9);
+$white: #eef2fb;
+$background-light: #0a1024;
+$container-bg: rgba(12, 18, 38, 0.9);
 
 $border-radius-lg: 20px;
 
@@ -27,10 +27,10 @@ $line-height-base: 1.2;
 $line-height-relaxed: 1.7;
 
 $transition-base: 0.3s ease;
-$shadow-light: 0 4px 15px rgba(107, 124, 50, 0.3);
-$shadow-hover: 0 6px 20px rgba(107, 124, 50, 0.4);
-$shadow-container: 0 8px 32px rgba(107, 124, 50, 0.1);
-$shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
+$shadow-light: 0 4px 15px rgba(79, 140, 247, 0.3);
+$shadow-hover: 0 6px 20px rgba(79, 140, 247, 0.4);
+$shadow-container: 0 8px 32px rgba(79, 140, 247, 0.1);
+$shadow-card: 0 4px 20px rgba(79, 140, 247, 0.5);
 
 @mixin gradient-bg($color1, $color2, $direction: 135deg) {
     background: linear-gradient($direction, $color1, $color2);
@@ -97,8 +97,9 @@ $shadow-card: 0 4px 20px rgba(107, 124, 50, 0.15);
             .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: $spacing-lg;
-                box-shadow: $shadow-card;
+                // box-shadow: $shadow-card;
                 border: 1px solid $khaki-border;
+                background:linear-gradient(135deg, var(--bg-soft), var(--card));;
 
                 .skill-item {
                     box-shadow: $shadow-light;

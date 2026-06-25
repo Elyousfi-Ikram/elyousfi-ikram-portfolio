@@ -1,17 +1,17 @@
 @use "sass:map";
 $colors: (
-    primary-khaki: #8B8F47,
-    secondary-khaki: #A4A86C,
-    text-dark: #2C2F33,
-    text-light: #6C757D,
-    white: #FFFFFF,
-    success: #28A745,
+    primary-khaki: #4f8cf7,
+    secondary-khaki: #9b5cf0,
+    text-dark: #eef2fb,
+    text-light: #93a0bb,
+    white: #eef2fb,
+    success: #2ee0e8,
     error: #DC3545,
-    border-light: #E9ECEF
+    border-light: rgba(155, 92, 240, 0.55)
 );
 
 $shadows: (
-    default: rgba(139, 143, 71, 0.1)
+    default: rgba(79, 140, 247, 0.1)
 );
 
 $breakpoints: (
@@ -54,8 +54,8 @@ $breakpoints: (
 
 .contact-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    min-height: 100vh;
+    background: linear-gradient(135deg, #070b16 0%, #0a1024 100%);
+    min-height: 70vh;
 
     .contact-container {
         max-width: 1000px;
@@ -71,7 +71,8 @@ $breakpoints: (
     }
 
     .contact-form {
-        @extend %card;
+        // @extend %card;
+        border: 1px solid rgba(155, 92, 240, 0.55);
 
         .form-row {
             grid-template-columns: 1fr 1fr;
@@ -106,7 +107,7 @@ $breakpoints: (
             padding: 15px 15px 15px 45px;
             border: 2px solid color(border-light);
             // font-size: 1rem;
-            background: #fafafa;
+            background: #0c1226;
 
             &::placeholder {
                 color: color(text-light);

@@ -5,18 +5,22 @@
     aria-label="Navigation principale"
   >
     <div class="nav-brand">
-      <img src="/assets/logo.png" alt="Logo" class="brand-logo">
+      <img src="/assets/logo-elykode.png" alt="Logo" class="brand-logo">
     </div>
     <div class="nav-links d-flex flex-wrap justify-content-end gap-3">
-      <!-- suppression de `index as index` (non utilisé) -->
-      <a
-        *ngFor="let item of navigationItems"
-        [href]="item.href"
-        class="nav-link py-2 px-3"
-        [attr.aria-label]="'Aller à ' + item.label"
-      >
-        {{ item.label }}
-      </a>
+      <ng-container *ngFor="let item of navItems">
+        <a *ngIf="item.external"
+          [href]="item.href"
+          class="nav-link py-2 px-3"
+          [attr.aria-label]="'Aller à ' + item.label"
+        >{{ item.label }}</a>
+        <a *ngIf="!item.external"
+          [routerLink]="item.href"
+          routerLinkActive="active"
+          class="nav-link py-2 px-3"
+          [attr.aria-label]="'Aller à ' + item.label"
+        >{{ item.label }}</a>
+      </ng-container>
     </div>
   </nav>
 
@@ -45,16 +49,21 @@
       role="navigation"
       aria-label="Navigation mobile"
     >
-      <!-- suppression de `index as index` (non utilisé) -->
-      <a
-        *ngFor="let item of navigationItems"
-        [href]="item.href"
-        class="mobile-link d-block py-3 px-4"
-        (click)="closeMenu()"
-        [attr.aria-label]="'Aller à ' + item.label"
-      >
-        {{ item.label }}
-      </a>
+      <ng-container *ngFor="let item of navItems">
+        <a *ngIf="item.external"
+          [href]="item.href"
+          class="mobile-link d-block py-3 px-4"
+          (click)="closeMenu()"
+          [attr.aria-label]="'Aller à ' + item.label"
+        >{{ item.label }}</a>
+        <a *ngIf="!item.external"
+          [routerLink]="item.href"
+          routerLinkActive="active"
+          class="mobile-link d-block py-3 px-4"
+          (click)="closeMenu()"
+          [attr.aria-label]="'Aller à ' + item.label"
+        >{{ item.label }}</a>
+      </ng-container>
     </nav>
   </div>
 
