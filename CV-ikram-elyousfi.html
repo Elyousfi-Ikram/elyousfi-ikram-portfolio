@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>EL YOUSFI Ikram — CV Développeuse Web</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  :root{
+    --bg:#070b16;
+    --bg-soft:#0a1024;
+    --card:#0c1226;
+    --card-border: rgba(155, 92, 240, 0.45);
+    --blue:#4f8cf7;
+    --purple:#9b5cf0;
+    --violet:#c084fc;
+    --cyan:#2ee0e8;
+    --text:#eef2fb;
+    --muted:#93a0bb;
+    --muted-soft:#6c7894;
+    --grad: linear-gradient(100deg, #4f8cf7 0%, #9b5cf0 55%, #c084fc 100%);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background: linear-gradient(135deg, var(--bg-soft), var(--bg));
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page{
+    max-width:1000px;
+    margin:32px auto;
+    padding:0 16px;
+  }
+  .sheet{
+    background: var(--card);
+    border:1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    overflow:hidden;
+  }
+  .header{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    padding:40px 44px 32px;
+    background: linear-gradient(120deg, rgba(79,140,247,.18), rgba(155,92,240,.18) 55%, rgba(192,132,252,.12));
+    border-bottom:1px solid var(--card-border);
+  }
+  .avatar{
+    width:104px;height:104px;border-radius:50%;
+    background: var(--grad);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Sora',sans-serif;font-weight:800;font-size:2rem;color:#fff;
+    flex:0 0 auto;
+    box-shadow:0 0 0 4px rgba(255,255,255,.08);
+  }
+  .ident h1{
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:2rem;
+    letter-spacing:-0.02em;
+    margin:0 0 4px;
+    background: var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .ident .role{
+    font-family:'Sora',sans-serif;
+    font-weight:600;
+    color:var(--muted);
+    font-size:1.05rem;
+    margin-bottom:14px;
+  }
+  .contacts{
+    display:flex;flex-wrap:wrap;gap:14px 22px;
+    font-size:.9rem;color:var(--muted);
+  }
+  .contacts a{color:var(--text);text-decoration:none;}
+  .contacts a:hover{color:var(--cyan);}
+  .contacts i{color:var(--cyan);width:16px;text-align:center;margin-right:6px;}
+
+  .body-grid{
+    display:grid;
+    grid-template-columns: 290px 1fr;
+  }
+  .sidebar{
+    padding:36px 30px;
+    background: rgba(255,255,255,.02);
+    border-right:1px solid var(--card-border);
+  }
+  .main{
+    padding:36px 44px;
+  }
+  .section + .section{margin-top:30px;}
+  .section-title{
+    font-family:'Sora',sans-serif;
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--violet);
+    margin:0 0 14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .section-title::after{
+    content:"";flex:1;height:1px;
+    background: linear-gradient(90deg, var(--card-border), transparent);
+  }
+  .pill-group{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    font-size:.78rem;
+    padding:5px 12px;
+    border-radius:999px;
+    background: rgba(79,140,247,.12);
+    border:1px solid rgba(79,140,247,.35);
+    color:var(--text);
+  }
+  .pill.alt{
+    background: rgba(46,224,232,.10);
+    border-color: rgba(46,224,232,.32);
+  }
+  .skill-block{margin-bottom:18px;}
+  .skill-block:last-child{margin-bottom:0;}
+  .skill-block h4{
+    font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--muted-soft);margin:0 0 8px;font-weight:600;
+  }
+  .quality-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .quality-list li{font-size:.85rem;color:var(--muted);line-height:1.45;}
+  .quality-list b{color:var(--text);display:block;font-size:.85rem;margin-bottom:2px;}
+  .quality-list i{color:var(--cyan);margin-right:8px;}
+
+  .intro{
+    font-size:1rem;line-height:1.65;color:var(--text);margin:0 0 8px;
+  }
+  .intro b{color:var(--cyan);font-weight:600;}
+  .link-line{font-size:.88rem;color:var(--muted);}
+  .link-line a{color:var(--violet);text-decoration:none;font-weight:600;}
+
+  .timeline{display:flex;flex-direction:column;gap:24px;}
+  .job{
+    position:relative;
+    padding-left:22px;
+    border-left:2px solid var(--card-border);
+  }
+  .job::before{
+    content:"";position:absolute;left:-7px;top:4px;
+    width:12px;height:12px;border-radius:50%;
+    background: var(--grad);
+    box-shadow:0 0 0 3px var(--card);
+  }
+  .job-head{
+    display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;
+    margin-bottom:6px;
+  }
+  .job-title{font-family:'Sora',sans-serif;font-weight:700;font-size:1rem;color:var(--text);}
+  .job-meta{font-size:.78rem;color:var(--muted-soft);}
+  .job-period{
+    font-size:.74rem;font-weight:600;color:var(--blue);
+    background:rgba(79,140,247,.12);
+    border:1px solid rgba(79,140,247,.3);
+    padding:2px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .job p{margin:0;font-size:.88rem;line-height:1.55;color:var(--muted);}
+  .job ul{margin:6px 0 0;padding-left:18px;font-size:.86rem;color:var(--muted);line-height:1.55;}
+  .job ul li{margin-bottom:2px;}
+
+  .edu-item{margin-bottom:16px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:var(--text);}
+  .edu-meta{font-size:.76rem;color:var(--blue);font-weight:600;margin-bottom:3px;}
+  .edu-item p{margin:4px 0 0;font-size:.82rem;color:var(--muted);line-height:1.5;}
+
+  @media (max-width: 760px){
+    .body-grid{grid-template-columns:1fr;}
+    .sidebar{border-right:none;border-bottom:1px solid var(--card-border);}
+    .header{flex-direction:column;text-align:center;}
+    .contacts{justify-content:center;}
+  }
+
+  @media print{
+    body{background:var(--bg);}
+    .page{margin:0;padding:0;max-width:none;}
+    .sheet{box-shadow:none;border-radius:0;}
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="sheet">
+
+      <div class="header">
+        <div class="avatar">EI</div>
+        <div class="ident">
+          <h1>EL YOUSFI IKRAM</h1>
+          <div class="role">Développeuse Web — Front-End &amp; Fullstack</div>
+          <div class="contacts">
+            <span><i class="fa-solid fa-phone"></i><a href="tel:0783440064">07 83 44 00 64</a></span>
+            <span><i class="fa-solid fa-envelope"></i><a href="mailto:elyousfi.ikram@hotmail.com">elyousfi.ikram@hotmail.com</a></span>
+            <span><i class="fa-solid fa-location-dot"></i>5 Rue du Taoume, 13013 Marseille</span>
+            <span><i class="fa-solid fa-globe"></i><a href="https://elyousfi-ikram.vercel.app/" target="_blank" rel="noopener">elyousfi-ikram.vercel.app</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="body-grid">
+
+        <aside class="sidebar">
+
+          <div class="section">
+            <div class="section-title">Stack technique</div>
+            <div class="skill-block">
+              <h4>Frameworks &amp; Langages</h4>
+              <div class="pill-group">
+                <span class="pill">Angular</span>
+                <span class="pill">Vue.js</span>
+                <span class="pill">React</span>
+                <span class="pill">Node.js / Express</span>
+                <span class="pill">TypeScript</span>
+                <span class="pill">JavaScript</span>
+                <span class="pill">PHP</span>
+              </div>
+            </div>
+            <div class="skill-block">
+              <h4>Intégration</h4>
+              <div class="pill-group">
+                <span class="pill alt">HTML5</span>
+                <span class="pill alt">CSS / SCSS</span>
+                <span class="pill alt">Bootstrap</span>
+              </div>
+            </div>
+            <div class="skill-block">
+              <h4>Base de données</h4>
+              <div class="pill-group">
+                <span class="pill alt">MongoDB</span>
+              </div>
+            </div>
+            <div class="skill-block">
+              <h4>Outils &amp; pratiques</h4>
+              <div class="pill-group">
+                <span class="pill">Git / GitHub</span>
+                <span class="pill">GitHub Actions (CI/CD)</span>
+                <span class="pill">Figma</span>
+                <span class="pill">Postman</span>
+                <span class="pill">VS Code</span>
+                <span class="pill">Lighthouse</span>
+                <span class="pill">SEO / GA4</span>
+                <span class="pill">WordPress</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-title">Qualités</div>
+            <ul class="quality-list">
+              <li><i class="fa-solid fa-diagram-project"></i><b>Esprit analytique</b>Résolution de problèmes &amp; optimisation du code.</li>
+              <li><i class="fa-solid fa-rocket"></i><b>Veille technologique</b>Apprentissage constant des nouvelles technologies.</li>
+              <li><i class="fa-solid fa-people-group"></i><b>Travail en équipe</b>Collaboration avec devs, designers, chefs de projet.</li>
+              <li><i class="fa-solid fa-ear-listen"></i><b>Écoute &amp; compréhension</b>Adaptation aux besoins clients/utilisateurs.</li>
+              <li><i class="fa-solid fa-list-check"></i><b>Rigueur &amp; organisation</b>Code structuré, bonnes pratiques, documentation.</li>
+            </ul>
+          </div>
+
+        </aside>
+
+        <main class="main">
+
+          <div class="section">
+            <div class="section-title">Présentation</div>
+            <p class="intro">
+              Développeuse web <b>front-end</b> avec de solides bases <b>back-end</b>, je conçois des interfaces
+              modernes, performantes et orientées expérience utilisateur. Sur mes dernières missions freelance,
+              j'ai conduit en autonomie des développements <b>Angular</b> et <b>Vue.js</b> de bout en bout :
+              architecture de composants réutilisables, optimisation SEO &amp; Core Web Vitals, SSR, CI/CD et
+              fiabilisation des échanges front/back/BDD. Toujours en veille technologique, je m'investis sur
+              chaque étape d'un projet, de la conception à la mise en production.
+            </p>
+            <div class="link-line">Réalisations détaillées sur mon portfolio : <a href="https://elyousfi-ikram.vercel.app/" target="_blank" rel="noopener">elyousfi-ikram.vercel.app</a></div>
+          </div>
+
+          <div class="section">
+            <div class="section-title">Expériences professionnelles</div>
+            <div class="timeline">
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">Développeuse Frontend (Angular) — Gamexpo, Freelance</div>
+                    <div class="job-meta">Application web de gestion &amp; préparation d'événements</div>
+                  </div>
+                  <span class="job-period">Mars 2026 — Actuellement</span>
+                </div>
+                <ul>
+                  <li>Conception de parcours multi-étapes, modales réutilisables et validations UI pour fiabiliser la saisie côté client.</li>
+                  <li>Interfaces riches : upload &amp; prévisualisation de fichiers, états de chargement/erreurs, navigation dynamique via Angular Router.</li>
+                  <li>Gestion d'état avec Signals et optimisation de l'expérience utilisateur (harmonisation des composants, responsive design).</li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">Développeuse Fullstack (Vue.js) — Gamexpo, Freelance</div>
+                    <div class="job-meta">Plateforme de gestion d'exposants</div>
+                  </div>
+                  <span class="job-period">Fév. 2026 — Mars 2026</span>
+                </div>
+                <ul>
+                  <li>Correction de bugs de synchronisation front/back/BDD pour fiabiliser l'enregistrement des données utilisateurs.</li>
+                  <li>Fonctionnalité de téléchargement groupé de fichiers PDF ; composants &amp; modales réutilisables pour standardiser l'interface.</li>
+                  <li>Harmonisation UI, boutons fixes au scroll, renforcement du responsive design (desktop, tablette, mobile).</li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">Développeuse Front-End — Sud Intelligence, CDD</div>
+                  </div>
+                  <span class="job-period">Mars — Nov. 2025</span>
+                </div>
+                <ul>
+                  <li>Développement complet de deux sites performants avec Angular 20, SCSS modulaire et Bootstrap, système multilingue FR/EN.</li>
+                  <li>Server-Side Rendering (SSR) pour la performance et l'indexation SEO ; SEO avancé (meta tags, Open Graph, JSON-LD, sitemap, robots.txt, SEO local).</li>
+                  <li>Core Web Vitals : lazy-loading, préchargement des assets, images WebP, réduction du CLS, optimisation des fonts. Accessibilité ARIA, GA4 anonymisé.</li>
+                  <li>CI/CD avec GitHub Actions et hébergement sécurisé sur IONOS, maintenance et évolutions continues.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-title">Formations</div>
+
+            <div class="edu-item">
+              <div class="edu-title">Formation Développeur Web</div>
+              <div class="edu-meta">2024 — 2025</div>
+              <p>Sites web responsives et dynamiques (HTML, CSS, JavaScript, React). Back-end avec Node.js, Express, MongoDB (API, gestion de bases de données). Optimisation des performances et SEO. Gestion complète de projets web, de la planification à la livraison.</p>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-title">Licence — Faculté des Sciences de Luminy, section Chimie</div>
+              <div class="edu-meta">2017 — 2020</div>
+              <p>Rigueur méthodologique, analyse de données et rédaction de rapports — des compétences analytiques directement transférables au développement (résolution de problèmes, structuration, documentation).</p>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-title">BAC STL — Lycée Victor Hugo</div>
+              <div class="edu-meta">2017</div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
